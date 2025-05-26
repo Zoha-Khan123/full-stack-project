@@ -28,7 +28,9 @@ export default function DashboardProfile() {
           const { payload } = await jwtVerify(token, secret);
           const userEmail = payload.email || payload.sub;
 
-          const response = await fetch("http://127.0.0.1:8000/users/");
+          
+
+          const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users`);
           if (!response.ok) throw new Error("Failed to fetch users");
 
           const users = await response.json();

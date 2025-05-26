@@ -49,7 +49,8 @@ export default function VolunteerLightingUsage() {
   const [volunteers, setVolunteers] = useState<Volunteer[]>([]);
   const chartRef = useRef<ChartJS<"line">>(null);
 
-  const API_URL = "https://portal-backend-deploy.up.railway.app/users/";
+  const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/users`;
+
 
   useEffect(() => {
   const fetchVolunteers = async () => {

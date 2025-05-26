@@ -39,7 +39,8 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchVolunteers = async () => {
       try {
-        const response = await axios.get("https://portal-backend-deploy.up.railway.app/users/");
+        
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/users`);
         const allUsers = response.data;
 
         // Filter only users with role 'volunteer'

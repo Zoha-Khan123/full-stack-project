@@ -25,7 +25,7 @@ const Login = () => {
     }
 
     try {
-      const res = await fetch("https://portal-backend-deploy.up.railway.app/auth/login", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
         // ✅ Correct endpoint
         method: "POST",
         headers: {

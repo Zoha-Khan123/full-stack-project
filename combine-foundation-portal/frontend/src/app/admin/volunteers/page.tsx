@@ -330,7 +330,9 @@ export default function VolunteerPage() {
 useEffect(() => {
   const fetchVolunteers = async () => {
     try {
-      const res = await fetch("https://portal-backend-deploy.up.railway.app/users/volunteers");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/volunteers`)
+      
+      
       const data = await res.json();
 
       // Step 1: Filter volunteers from response (already volunteers API, so skip this if unnecessary)
