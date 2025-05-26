@@ -11,8 +11,6 @@ load_dotenv()
 app = FastAPI()
 
 
-
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["https://full-stack-project-id5k.vercel.app"],  
